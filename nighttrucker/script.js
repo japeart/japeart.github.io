@@ -90,7 +90,7 @@ var stickDownGfx = new Array(
   0, 1, 0, 0, 0, 0, 1, 0);
 
 // GLOBS
-var can = document.getElementById("canvas");
+var can = document.getElementById("gamePanel");
 var roadSpeed = 1;
 var gearGfx = loGfx;
 var stickGfx = stickUpGfx;
@@ -130,7 +130,7 @@ var gameScreen = {
       console.log('key up');
     });
   },
-  size: new Rect(0, 0, document.getElementById('canvas').width, document.getElementById('canvas').height),
+  size: new Rect(0, 0, document.getElementById('gamePanel').width, document.getElementById('gamePanel').height),
   con: can.getContext("2d"),
   clear: function() {
     this.con.fillStyle = "#000099";
@@ -184,20 +184,6 @@ var carRow = new Array(
   new Car(new Rect(32 * 5, -32, 32, 32), carGfx),
   new Car(new Rect(32 * 6, -32, 32, 32), carGfx)
 );
-
-// Car.prototype = new Sprite(new Rect(0, 0, 32, 32), carGfx, "#0000ff");
-// function Car(rect) {
-//   this.rect = rect;
-//   this.dead = true;
-//   this.move = function() {
-//     this.rect.y += roadSpeed;
-//     if(this.rect.y > gameScreen.size.y) {
-//       this.dead = true;
-//     }
-//   };
-// }
-
-
 
 Truck.prototype = new Sprite(new Rect(48, 176, 32, 32), truckTop, "#0000ff");
 

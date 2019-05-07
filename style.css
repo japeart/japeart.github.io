@@ -1,5 +1,22 @@
-body {
-  background-color: #0E2430;
-  font-family: sans-serif;
-  color: #E8D5B7;
+html {
+  background-color: #46466E;
+}
+
+.content {
+  text-align: center;
+  margin: auto;
+  background-color: #46466E;
+  font-family: 'Montserrat', sans-serif;
+  color: #BDBDD7;
+  max-width: 800px;
+}
+
+#gamePanel {
+  padding: 0;
+  margin: auto;
+  display: block;
+}
+
+a {
+  color: #DD105E;
 }

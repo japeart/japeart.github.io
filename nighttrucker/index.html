@@ -3,14 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Night Trucker</title>
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <style type="text/css">
-      #canvas {
-        margin: auto;
-      }
+    h1 {
+      font-family: Bungee;
+    }
+
     </style>
   </head>
+
   <body onload="gameScreen.init()">
-    <canvas id="canvas" width="288" height="256"></canvas>
+    <div class="content">
+    <h1>Night Trucker</h1>
+    <canvas id="gamePanel" width="288" height="256"></canvas>
+    <p>
+      Keys:<br />
+      W/D to move left/right<br />
+      A = shift up<br />
+      D = shift down
+    </p>
+  </div>
   </body>
   <script type="text/javascript" src="script.js"></script>
 </html>
