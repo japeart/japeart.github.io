@@ -1,19 +1,49 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 html {
-  background-color: #46466E;
+  background-color: LightGray;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  padding: 10px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight:bolder;
+  color: #1e1e1e;
+}
+
+hr {
+  border: 1px solid gray;
 }
 
 .content {
   text-align: center;
   margin: auto;
-  font-family: 'Montserrat', sans-serif;
-  color: #BDBDD7;
-  max-width: 800px;
+  /* font-family: 'Montserrat', sans-serif; */
+  color: #1e1e1e;
 }
 
 #gamePanel {
   padding: 0;
   margin: auto;
   display: block;
+}
+
+.gameColumn {
+  padding: 10px;
+  width: 250px;
+  height: auto;
+  text-align: left;
+}
+
+.gameCaption {
+  color: gray;
 }
 
 a {
