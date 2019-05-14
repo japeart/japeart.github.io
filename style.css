@@ -4,7 +4,7 @@
 }
 
 html {
-  background-color: LightGray;
+  background-color: Ivory;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -16,7 +16,15 @@ h1 {
   font-size: 48px;
   font-weight:bolder;
   color: #1e1e1e;
+  display: inline;
 }
+
+#tagline {
+  display: inline;
+  color: gray;
+  text-transform: uppercase;
+}
+
 
 hr {
   border: 1px solid gray;
