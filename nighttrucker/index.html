@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Night Trucker</title>
-    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
-    <style type="text/css">
+
+<head>
+  <meta charset="utf-8">
+  <title>Night Trucker</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style type="text/css">
     h1 {
       font-family: Bungee;
     }
+  </style>
+</head>
 
-    </style>
-  </head>
-
-  <body onload="gameScreen.init()">
-    <div class="content">
+<body onload="gameScreen.init()">
+  <div class="content">
     <h1>Night Trucker</h1>
     <canvas id="gamePanel" width="288" height="256"></canvas>
-    <p>
+    <p class="gameCaption">
       Keys:<br />
       W/D to move left/right<br />
       A = shift up<br />
-      D = shift down
+      D = shift down<br /><br />
+      <input type="button" value="About" onclick="aboutClicked()"/>
     </p>
+    <div id="aboutBox" class="gameCaption" style="width:250px; margin:auto;"></div>
   </div>
-  </body>
-  <script type="text/javascript" src="script.js"></script>
+
+</body>
+<script type="text/javascript" src="script.js"></script>
+<script>
+  /* just testing at mo */
+  function aboutClicked() {
+    document.getElementById('aboutBox').append(`Night Trucker (w.i.p.) is a simple Atari 2600 inspired game,
+      written to explore the use of HTML canvas and Javascript. I'm currently in
+      the process of porting it to C so that I can experiment with loading it as a
+      webassembly module...`);
+  }
+</script>
+
 </html>
