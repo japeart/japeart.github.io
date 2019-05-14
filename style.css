@@ -55,6 +55,14 @@ hr {
   /* max-width: 500px; */
 }
 
-a {
-  color: #DD105E;
+.aboutTrigger:hover + #aboutBox {
+  display: block;
+}
+
+#aboutBox {
+  display: none;
+}
+
+. + div {
+  display: block;
 }

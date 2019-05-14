@@ -23,9 +23,14 @@
       W/D to move left/right<br />
       A = shift up<br />
       D = shift down<br /><br />
-      <input type="button" value="About" onclick="aboutClicked()"/>
     </p>
-    <div id="aboutBox" class="gameCaption" style="width:250px; margin:auto;"></div>
+      <p class="aboutTrigger">
+        About
+      </p>
+    <div id="aboutBox" class="gameCaption" style="width:250px; margin:auto;">Night Trucker (w.i.p.) is a simple Atari 2600 inspired game,
+      written to explore the use of HTML canvas and Javascript. I'm currently in
+      the process of porting it to C so that I can experiment with loading it as a
+      webassembly module...</div>
   </div>
 
 </body>
@@ -33,10 +38,7 @@
 <script>
   /* just testing at mo */
   function aboutClicked() {
-    document.getElementById('aboutBox').append(`Night Trucker (w.i.p.) is a simple Atari 2600 inspired game,
-      written to explore the use of HTML canvas and Javascript. I'm currently in
-      the process of porting it to C so that I can experiment with loading it as a
-      webassembly module...`);
+    document.getElementById('aboutBox').append(``);
   }
 </script>
 
