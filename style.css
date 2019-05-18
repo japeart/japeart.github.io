@@ -1,11 +1,22 @@
 * {
   padding: 0px;
   margin: 0px;
+  /* border-style: solid;
+  border-width: 1px; */
 }
 
 html {
   background-color: Ivory;
   font-family: 'Roboto', sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  padding: 1em;
+  align-content: space-between;
 }
 
 header {
@@ -16,13 +27,12 @@ h1 {
   font-size: 48px;
   font-weight:bolder;
   color: #1e1e1e;
-  display: inline;
 }
 
 #tagline {
-  display: inline;
   color: gray;
   text-transform: uppercase;
+  padding-left: 1em;
 }
 
 
