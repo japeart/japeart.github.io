@@ -6,8 +6,12 @@
 }
 
 html {
-  background-color: Ivory;
+  background-color: #F48668;
   font-family: 'Roboto', sans-serif;
+}
+
+#tagline, .gameCaption {
+  color: gray;
 }
 
 .flex-container {
@@ -21,6 +25,7 @@ html {
 
 header {
   padding: 10px;
+  background-color: white;
 }
 
 h1 {
@@ -30,14 +35,8 @@ h1 {
 }
 
 #tagline {
-  color: gray;
   text-transform: uppercase;
   padding-left: 1em;
-}
-
-
-hr {
-  border: 1px solid gray;
 }
 
 .content {
@@ -48,7 +47,7 @@ hr {
 }
 
 #gamePanel {
-  padding: 0;
+  padding: 10px;
   margin: auto;
   display: block;
 }
@@ -58,10 +57,10 @@ hr {
   width: 250px;
   height: auto;
   text-align: left;
+  background-color: white;
 }
 
 .gameCaption {
-  color: gray;
   /* max-width: 500px; */
 }
 
