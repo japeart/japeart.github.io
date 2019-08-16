@@ -15,29 +15,28 @@ body {
 .banner {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
   align-items: baseline;
-  padding: 10px;
-  background-color: #f2f2f2;
-  padding: 1em;
+  background-color: white;
 }
 
 .banner h1 {
 }
 
 .banner p {
-  width: 50%;
-  padding-right: 2em;
-  /* padding-bottom: 2em; */
-  text-align: right;
+  padding: 10px;
   color: grey;
   text-transform: uppercase;
 }
 
+h1, h4 {
+  color: #1e1e1e;
+}
+
 h1 {
+  padding: 10px;
   font-size: 48px;
   font-weight:bolder;
-  color: #1e1e1e;
 }
 
 .midPanel {
@@ -52,7 +51,7 @@ h1 {
   padding: 10px;
   height: auto;
   text-align: left;
-  background-color: #f2f2f2;
+  background-color: white;
 }
 
 .contentBox img {
