@@ -1,0 +1,32 @@
+button {
+  background-color: inherit;
+  border: none;
+  text-align: center;
+  font-size: 13px;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+input {
+  border: none;
+  width: 25em;
+  height: 1.75em;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+input[type=text] {
+  background-color: #f2f2f2;
+}
+
+::placeholder {
+  color: grey;
+  font-style: italic;
+}
+
+.textInputForm button {
+  padding-left: 1em;
+  padding-right: 1em;
+}

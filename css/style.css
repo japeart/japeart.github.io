@@ -1,0 +1,75 @@
+@import "reset.css";
+@import "widgets.css";
+
+html {
+  font-family: 'Roboto', sans-serif;
+  color: #1a1a1a;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 175px;
+  grid-template-rows: 0.1fr 1fr 0.1fr;
+  grid-template-areas:
+    'header header'
+    'main main'
+    'footer footer';
+  background-color: #F48668;
+}
+
+header {
+  grid-area: header;
+  background-color: white;
+}
+
+header p, h1 {
+  display: inline-block;
+  color: grey;
+  text-transform: uppercase;
+}
+
+h1, h4 {
+  color: #1e1e1e;
+}
+
+h1 {
+  padding: 10px;
+  font-size: 48px;
+  font-weight:bolder;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  grid-area: main;
+}
+
+article {
+  display: inline-block;
+  margin: 0.5em auto 0.5em auto;
+  padding: 0.5em;
+  text-align: left;
+  background-color: white;
+}
+
+article:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #555;
+}
+
+article img {
+  width: 300px;
+  height: auto;
+}
+
+footer {
+  grid-area: footer;
+  background-color: white;
+  padding: 1em;
+}
