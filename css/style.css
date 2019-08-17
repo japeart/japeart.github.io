@@ -68,6 +68,10 @@ article img {
   height: auto;
 }
 
+#0 {
+  grid-area: 0;
+}
+
 footer {
   grid-area: footer;
   background-color: white;
