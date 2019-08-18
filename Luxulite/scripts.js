@@ -19,4 +19,9 @@ function displayNextCascadeImage() {
   console.log(cascadeIndex);
 }
 
+function logWindowSize() {
+  var width = document.getElementsByTagName('body')[0].clientWidth;
+  console.log('width:' + width);
+}
+
 setInterval(displayNextCascadeImage, 3 * 1000);
