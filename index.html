@@ -13,66 +13,118 @@
 <body>
   <header>
     <h1>./japeart</h1>
-    <p>web android java c c++ javascript PHP</p>
   </header>
 
-  <main>
+  <nav id='nav'></nav>
 
-    <article>
-      <a href="./nighttrucker/index.html">
-        <img src="./img/nightTrucker.png" />
-        <h4>NIGHT TRUCKER</h4>
-        <p class="caption">
-          Darkness prevails, raindrops hit the<br />
-          windshield. Ahead, the road calls your <br />
-          name. Ride your truck into
-          the night...
-        </p>
-      </a>
-    </article>
+  <main id="main">
 
-    <article>
-      <a href="./nighttrucker/index.html">
-        <img src="./img/nightTrucker.png" />
-        <h4>NIGHT TRUCKER</h4>
-        <p class="caption">
-          Darkness prevails, raindrops hit the<br />
-          windshield. Ahead, the road calls your <br />
-          name. Ride your truck into
-          the night...
-        </p>
-      </a>
-    </article>
-
-    <article>
-      <a href="./nighttrucker/index.html">
-        <img src="./img/nightTrucker.png" />
-        <h4>NIGHT TRUCKER</h4>
-        <p class="caption">
-          Darkness prevails, raindrops hit the<br />
-          windshield. Ahead, the road calls your <br />
-          name. Ride your truck into
-          the night...
-        </p>
-      </a>
-    </article>
-
-    <article>
-      <a href="./nighttrucker/index.html">
-        <img src="./img/nightTrucker.png" />
-        <h4>NIGHT TRUCKER</h4>
-        <p class="caption">
-          Darkness prevails, raindrops hit the<br />
-          windshield. Ahead, the road calls your <br />
-          name. Ride your truck into
-          the night...
-        </p>
-      </a>
-    </article>
   </main>
 
-  <footer>This is the footer</footer>
+  <aside id="aside"></aside>
 
-  </body>
+  <footer>
+
+  </footer>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/javascript" src="./scripts/scripts.js"></script>
+  <script type="text/babel">
+    const cppMsg =
+      <article>
+        <h4>NIGHT TRUCKER</h4>
+        <br />
+        <p>
+          Night Trucker is a retro road racing game in which you must collect boost
+          flags in order to increase your speed. Cross the finish line while in
+          boost mode to score big points. Avoid collisions with other vehicles to
+          survive.
+        </p>
+        <p>
+          Insipred by the ZX Spectrum and Atari 2600, this game is written in C++
+          and uses the SDL 2.0 library for 2d rendering purposes. It is still a
+          WIP, however you can visit my Itch.io page in the mean time for updates.
+        </p>
+        <br />
+        <a href="https://tenderboing.itch.io/night-trucker">Itch.io</a>
+      </article>;
+
+    const cppAside = <img src="./img/screenshot.png"/>
+
+    const androidMsg =
+      <article>
+        <h4>Luxulite Android App</h4><br />
+        <p>
+          Luxulite Ltd create vintage inspired costume jewellery and
+          accessories. As part of my final MSc Comp Sci project, I designed and
+          built an app for the Android platform allowing the user to create a
+          customised item for purchase.
+        </p>
+        <p>
+          This was achieved with Androids built in View framework, using
+          layered svg vector files to build up a final representation of the
+          item being designed. The project was not issued for general release,
+          however, given the chance to re-visit the  app I would implement it
+          for the browser using a modern js framework  and open up the
+          functionality for all. Watch this space...
+        </p><br />
+        <a href="https://www.luxulite.com">Luxulite</a>
+      </article>;
+
+    const webMsg =
+      <article>
+        <h4>Web Development</h4><br />
+        <p>
+          I am currently learning the React framework, actually, some of this page
+          features React components. Take a look at the js source and see for yourself!
+        </p>
+        <p>
+          I enjoy all aspects of the web stack; during the group project portion
+          of my MSc we developed a web app for a fast food outlet. This gave me
+          the opportunity to work with tech such as HTML, CSS, PHP, and Javascript.
+          I come from an arts background, and so I also enjoy front-end design and
+          development. If it looks good, it probably is!
+        </p>
+      </article>;
+
+      /* create a REACT button */
+      function CreateButton(props) {
+        return <button onClick={props.method}>{props.name}</button>
+      }
+
+      function showCpp() {
+        render(cppMsg, 'main');
+        render(cppAside, 'aside');
+      }
+
+      function showAndroid() {
+        render(androidMsg, 'main');
+        render("", 'aside');
+      }
+
+      function showWeb() {
+        render(webMsg, 'main');
+        render("", 'aside');
+      }
+
+      function render(element, tag) {
+        ReactDOM.render(
+          element,
+          document.getElementById(tag)
+        );
+      }
+
+      const cppBtn = <CreateButton method={showCpp} name="C/C++" />;
+      const androidBtn = <CreateButton method={showAndroid} name="Android" />;
+      const webBtn = <CreateButton method={showWeb} name="Web" />;
+
+      const buttons = [cppBtn, androidBtn, webBtn];
+
+      render(buttons, 'nav');
+
+  </script>
+</body>
 
 </html>

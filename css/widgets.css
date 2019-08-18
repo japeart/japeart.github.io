@@ -1,12 +1,19 @@
 button {
+  display: inline-block;
+  width: 16%;
+  height: 30px;
   background-color: inherit;
+  color: grey;
   border: none;
   text-align: center;
   font-size: 13px;
 }
 
 button:hover {
-  text-decoration: underline;
+  color: black;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: red;
 }
 
 input {
