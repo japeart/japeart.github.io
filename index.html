@@ -51,7 +51,8 @@
         <a href="https://tenderboing.itch.io/night-trucker">Itch.io</a>
       </article>;
 
-    const cppAside = <img src="./img/screenshot.png"/>
+    const cppAside = <img src="./img/screenshot.png"/>;
+    const androidAside = <img src="./img/lux.png"/>;
 
     const androidMsg =
       <article>
@@ -70,7 +71,7 @@
           for the browser using a modern js framework  and open up the
           functionality for all. Watch this space...
         </p><br />
-        <a href="https://www.luxulite.com">Luxulite</a>
+        <a href="https://www.etsy.com/shop/luxulite/">Luxulite</a>
       </article>;
 
     const webMsg =
@@ -86,6 +87,25 @@
           the opportunity to work with tech such as HTML, CSS, PHP, and Javascript.
           I come from an arts background, and so I also enjoy front-end design and
           development. If it looks good, it probably is!
+        </p>
+      </article>;
+
+    const meMsg =
+      <article>
+        <h4>About Me</h4>
+        <p>
+          I am a recent (2019) Newcastle University MSc Computer Science gradute.
+          I have been programming for many years, starting with ZX Spectrum basic
+          before taking the plunge and buying a C++ programming book in around 2006.
+          As you can probably tell, game programming was my primary motivation in
+          learing to code, however, as time has progressed, I have developed an
+          interest across many areas of development, especially the web.
+        </p>
+        <p>
+          As an undergraduate, I studied guitar making in London, a wonderful
+          experience which instilled a deep respect for industiral design which
+          I try to apply to my software endeavours whether it be in the form of
+          the user interface, or code architecture. I also have mad love for cats.
         </p>
       </article>;
 
@@ -109,6 +129,11 @@
         render("", 'aside');
       }
 
+      function show(article, aside) {
+        render(article, 'main');
+        render(aside, 'aside');
+      }
+
       function render(element, tag) {
         ReactDOM.render(
           element,
@@ -116,13 +141,15 @@
         );
       }
 
-      const cppBtn = <CreateButton method={showCpp} name="C/C++" />;
-      const androidBtn = <CreateButton method={showAndroid} name="Android" />;
-      const webBtn = <CreateButton method={showWeb} name="Web" />;
+      const nav =
+        <div>
+          <CreateButton method={() => show(meMsg, "")} name="About Me" />
+          <CreateButton method={() => show(cppMsg, cppAside)} name="C/C++" />
+          <CreateButton method={() => show(androidMsg, androidAside)} name="Android" />
+          <CreateButton method={() => show(webMsg, "")} name="Web" />
+        </div>;
 
-      const buttons = [cppBtn, androidBtn, webBtn];
-
-      render(buttons, 'nav');
+      render(nav, 'nav');
 
   </script>
 </body>
