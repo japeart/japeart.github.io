@@ -11,21 +11,7 @@
 </head>
 
 <body>
-  <header>
-    <h1>./japeart</h1>
-  </header>
-
-  <nav id='nav'></nav>
-
-  <main id="main">
-
-  </main>
-
-  <aside id="aside"></aside>
-
-  <footer>
-
-  </footer>
+  <div id='root'></div>
 
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
@@ -114,21 +100,6 @@
         return <button onClick={props.method}>{props.name}</button>
       }
 
-      function showCpp() {
-        render(cppMsg, 'main');
-        render(cppAside, 'aside');
-      }
-
-      function showAndroid() {
-        render(androidMsg, 'main');
-        render("", 'aside');
-      }
-
-      function showWeb() {
-        render(webMsg, 'main');
-        render("", 'aside');
-      }
-
       function show(article, aside) {
         render(article, 'main');
         render(aside, 'aside');
@@ -141,15 +112,21 @@
         );
       }
 
-      const nav =
-        <div>
+      const page =
+      <div id="container">
+      <header><h1>./japeart</h1></header>
+        <nav>
           <CreateButton method={() => show(meMsg, "")} name="About Me" />
           <CreateButton method={() => show(cppMsg, cppAside)} name="C/C++" />
           <CreateButton method={() => show(androidMsg, androidAside)} name="Android" />
           <CreateButton method={() => show(webMsg, "")} name="Web" />
-        </div>;
+        </nav>
+        <main id='main'></main>
+        <aside id='aside'></aside>
+        <footer></footer>
+      </div>;
 
-      render(nav, 'nav');
+      render(page, 'root');
 
   </script>
 </body>
