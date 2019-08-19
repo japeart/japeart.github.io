@@ -18,6 +18,7 @@
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script type="text/javascript" src="./scripts/scripts.js"></script>
   <script type="text/babel">
+
     const cppMsg =
       <article>
         <h4>NIGHT TRUCKER</h4>
@@ -31,14 +32,14 @@
         <p>
           Insipred by the ZX Spectrum and Atari 2600, this game is written in C++
           and uses the SDL 2.0 library for 2d rendering purposes. It is still a
-          WIP, however you can visit my Itch.io page in the mean time for updates.
+          WIP, however you can visit my Itch.io page in the meantime for updates.
         </p>
         <br />
         <a href="https://tenderboing.itch.io/night-trucker">Itch.io</a>
       </article>;
 
     const cppAside = <img src="./img/screenshot.png"/>;
-    const androidAside = <img src="./img/lux.png"/>;
+    const androidAside = <img src="./img/lux.png" width="200"/>;
 
     const androidMsg =
       <article>
@@ -50,7 +51,7 @@
           customised item for purchase.
         </p>
         <p>
-          This was achieved with Androids built in View framework, using
+          This was achieved with the Android built-in View component, using
           layered svg vector files to build up a final representation of the
           item being designed. The project was not issued for general release,
           however, given the chance to re-visit the  app I would implement it
@@ -89,46 +90,84 @@
         </p>
         <p>
           As an undergraduate, I studied guitar making in London, a wonderful
-          experience which instilled a deep respect for industiral design which
+          experience which instilled a deep respect for industrial design which
           I try to apply to my software endeavours whether it be in the form of
           the user interface, or code architecture. I also have mad love for cats.
         </p>
+        <a href="https://github.com/japeart">GitHub</a>
       </article>;
 
-      /* create a REACT button */
-      function CreateButton(props) {
-        return <button onClick={props.method}>{props.name}</button>
+      class Layout extends React.Component {
+
+        constructor() {
+          super();
+          this.state = {
+            article : "",
+            aside : ""
+          };
+        }
+
+        render() {
+          return (
+            <div id='container'>
+              <header>
+                <h1>./japeart</h1>
+              </header>
+              <nav>
+                <Button method={this.show.bind(this)} article={meMsg} aside="" name="About Me" />
+                <Button method={this.show.bind(this)} article={cppMsg} aside={cppAside} name="C/C++" />
+                <Button method={this.show.bind(this)} article={webMsg} aside="" name="Web Development" />
+                <Button method={this.show.bind(this)} article={androidMsg} aside={androidAside} name="Android" />
+              </nav>
+              <main id='main'>{this.state.article}</main>
+              <aside id='aside'>{this.state.aside}</aside>
+              <footer id='footer'></footer>
+            </div>
+          );
+        }
+
+        /* update this.state in realtime */
+        show(art, asi) {
+          this.setState({article : art});
+          this.setState({aside : asi});
+        }
       }
 
-      function show(article, aside) {
-        render(article, 'main');
-        render(aside, 'aside');
+      class Article extends React.Component {
+        render() {
+          return (
+            <article>
+              {this.props.title}
+              {this.props.paras}
+              {this.props.footnote}
+            </article>
+          );
+        }
       }
 
-      function render(element, tag) {
-        ReactDOM.render(
-          element,
-          document.getElementById(tag)
-        );
+      class Footnote extends React.Component {
+        render() {
+          return (
+            <div id='footnote'>
+              {this.props.links}
+            </div>
+          );
+        }
       }
 
-      const page =
-      <div id="container">
-      <header><h1>./japeart</h1></header>
-        <nav>
-          <CreateButton method={() => show(meMsg, "")} name="About Me" />
-          <CreateButton method={() => show(cppMsg, cppAside)} name="C/C++" />
-          <CreateButton method={() => show(androidMsg, androidAside)} name="Android" />
-          <CreateButton method={() => show(webMsg, "")} name="Web" />
-        </nav>
-        <main id='main'></main>
-        <aside id='aside'></aside>
-        <footer></footer>
-      </div>;
+      class Button extends React.Component {
+        render() {
+          return (
+            <button onClick={() => this.props.method(this.props.article, this.props.aside)}>{this.props.name}</button>
+          );
+        }
+      }
 
-      render(page, 'root');
+      ReactDOM.render(
+        <Layout/>,
+        document.getElementById('root')
+      );
 
   </script>
 </body>
-
 </html>
