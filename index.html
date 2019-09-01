@@ -97,6 +97,26 @@
         <a href="https://github.com/japeart">GitHub</a>
       </article>;
 
+    const jsArticle =
+      <article>
+        <h4>Javascript</h4>
+        <p>
+          I am fairly new to JS, however I've discovered its a great language to
+          experiment with due to its close integration with the browser. I have
+          some experience with JQuery and mySQL having used it during my MSc final
+          project to handle AJAX requests.
+        </p>
+        <p>
+          Please check out the links to the right for new experiments in JS as
+          and when they appear.
+        </p>
+      </article>;
+
+      const jsAside =
+        <div>
+          <a href="./pong/index.html">Javascript Pong</a>
+        </div>
+
       class Layout extends React.Component {
 
         constructor() {
@@ -114,10 +134,11 @@
                 <h1>./japeart</h1>
               </header>
               <nav>
-                <Button method={this.show.bind(this)} article={meMsg} aside="" name="About Me" />
-                <Button method={this.show.bind(this)} article={cppMsg} aside={cppAside} name="C/C++" />
-                <Button method={this.show.bind(this)} article={webMsg} aside="" name="Web Development" />
-                <Button method={this.show.bind(this)} article={androidMsg} aside={androidAside} name="Android" />
+                <Button click={this.show} article={meMsg} aside='' name="About Me" />
+                <Button click={this.show} article={cppMsg} aside={cppAside} name="C/C++" />
+                <Button click={this.show} article={webMsg} aside='' name="Wev Development" />
+                <Button click={this.show} article={androidMsg} aside={androidAside} name="Android" />
+                <Button click={this.show} article={jsArticle} aside={jsAside} name="Javascript" />
               </nav>
               <main id='main'>{this.state.article}</main>
               <aside id='aside'>{this.state.aside}</aside>
@@ -127,9 +148,21 @@
         }
 
         /* update this.state in realtime */
-        show(art, asi) {
+        show = (art, asi) => {
           this.setState({article : art});
           this.setState({aside : asi});
+        }
+      }
+
+      class Button extends React.Component {
+        render() {
+          return (
+            <button onClick={this.clicked}>{this.props.name}</button>
+          );
+        }
+
+        clicked = () => {
+          this.props.click(this.props.article, this.props.aside);
         }
       }
 
@@ -151,14 +184,6 @@
             <div id='footnote'>
               {this.props.links}
             </div>
-          );
-        }
-      }
-
-      class Button extends React.Component {
-        render() {
-          return (
-            <button onClick={() => this.props.method(this.props.article, this.props.aside)}>{this.props.name}</button>
           );
         }
       }
