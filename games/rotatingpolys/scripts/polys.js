@@ -7,13 +7,31 @@ class Vec2d {
     this.x = x;
     this.y = y;
   }
+
+  rotate(angle) {
+    let x = this.x;
+    let y = this.y;
+    this.x = x * Math.cos(angle) - y * Math.sin(angle);
+    this.y = x * Math.sin(angle) + y * Math.cos(angle);
+  }
+
+  scale(factor) {
+    this.x *= factor;
+    this.y *= factor;
+  }
+
+  translate(point) {
+    this.x += point.x;
+    this.y += point.y;
+  }
 }
 
 class Polygon {
-  constructor(points, origin, scale) {
+  constructor(points, origin, scale, rotSpeed) {
     this.points = points;
     this.origin = origin;
-    this.scale(scale);
+    this.rotSpeed = rotSpeed;
+    this.points.forEach((p) => p.scale(scale));
   }
 
   /* loop around the points and draw the poly */
@@ -30,66 +48,33 @@ class Polygon {
     screen.context.stroke();
   }
 
-  /* move the origin to new location */
-  translate(point) {
-    this.origin.x += point.x;
-    this.origin.y += point.y;
-  }
-
-  rotate(angle) {
-    this.points.forEach((p) => {
-      let x = p.x;
-      let y = p.y;
-      p.x = x * Math.cos(angle) - y * Math.sin(angle);
-      p.y = x * Math.sin(angle) + y * Math.cos(angle);
-    });
-  }
-
-  scale(factor) {
-    this.points.forEach((p) => {
-      p.x *= factor;
-      p.y *= factor;
-    });
+  update() {
+    this.points.forEach((p) => p.rotate(this.rotSpeed));
   }
 }
 
-const tri1 = new Polygon([
-  new Vec2d(0, -10),
-  new Vec2d(10, 10),
-  new Vec2d(-10, 10)
-], new Vec2d(30, 30), 2);
+const tris = new Array();
 
-const tri2 = new Polygon([
-  new Vec2d(0, -10),
-  new Vec2d(10, 10),
-  new Vec2d(-10, 10)
-], new Vec2d(120, 64), 4);
-
-const tri3 = new Polygon([
-  new Vec2d(0, -10),
-  new Vec2d(10, 10),
-  new Vec2d(-10, 10)
-], new Vec2d(200, 172), 0.8);
-
-const tri4 = new Polygon([
-  new Vec2d(0, -10),
-  new Vec2d(10, 10),
-  new Vec2d(-10, 10)
-], new Vec2d(52, 156), 3);
+for(let i = 0; i < 16; i++){
+  let rot = Math.random() / 10;
+  rot = rot > 0.04 ? -rot : rot;
+  tris.push(new Polygon([
+    new Vec2d(0, -10),
+    new Vec2d(10, 10),
+    new Vec2d(-10, 10)
+  ], new Vec2d(Math.random() * 600, Math.random() * 600), Math.random() * 4, rot));
+}
 
 setInterval(tick, 33);
 
 function tick() {
-  screen.clear('purple');
-  tri1.rotate(0.01);
-  tri1.draw();
+  screen.clear('#0000ff');
 
-  tri2.rotate(0.1);
-  tri2.draw();
+  for(key in tris) {
+    tris[key].update();
+  }
 
-  tri3.rotate(-0.002);
-  tri3.draw();
-
-  tri4.rotate(-0.02);
-  tri4.draw();
+  for(key in tris) {
+    tris[key].draw();
+  }
 }
