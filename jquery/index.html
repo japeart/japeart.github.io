@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JQuery Example</title>
+    <style media="screen">
+      .entry, #inputArea, p {
+        border-radius: 10px;
+        background: #f2f2f2;
+        padding: 20px;
+        margin: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      This page demonstrates the use of jQuery to call the public API at https://jsonplaceholder.typicode.com
+      to return some simple placeholder content. Use the input fields below to specify your query and press
+      submit to fetch the results.
+    </p>
+    <div id='inputArea'>
+      <input type="text" size='40' placeholder="Type a user id between 1 and 10" id="inputUserId">
+      <input type="button" id='userIdButton' name="" value="Submit">
+      <input type="text" size='40' placeholder="Type a post id between 1 and 100" id="inputId">
+      <input type="button" id='idButton' name="" value="Submit">
+    </div>
+
+    <div id="results"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='./scripts/scripts.js'></script>
+  </body>
+</html>
