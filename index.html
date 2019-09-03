@@ -60,22 +60,6 @@
         <a href="https://www.etsy.com/shop/luxulite/">Luxulite</a>
       </article>;
 
-    const webMsg =
-      <article>
-        <h4>Web Development</h4>
-        <p>
-          I am currently learning the React framework, actually, some of this page
-          is powered by React components.
-        </p>
-        <p>
-          I enjoy all layers of the web stack; during the group project portion
-          of my MSc we developed a web app for a fast food outlet. This gave me
-          the opportunity to work with tech such as HTML, CSS, PHP, and Javascript.
-          I come from an arts background, and so I like to develop my front-end design
-          skills to learn exactly what makes a web app look and feel good for the user.
-        </p>
-      </article>;
-
     const meMsg =
       <article>
         <h4>About Me</h4>
@@ -103,11 +87,8 @@
           I am fairly new to JS, however I've discovered its a great language to
           experiment with due to its close integration with the browser. I have
           some experience with JQuery and mySQL having used it during my MSc final
-          project to handle AJAX requests.
-        </p>
-        <p>
-          Please check out the links for new experiments in JS as
-          and when they appear.
+          project to handle AJAX requests. Please check out the links for new
+          experiments in JS as and when they appear.
         </p>
       </article>;
 
@@ -152,7 +133,6 @@
               <nav>
                 <Button click={this.show} article={meMsg} aside='' name="About Me" />
                 <Button click={this.show} article={cppMsg} aside={cppAside} name="C/C++" />
-                <Button click={this.show} article={webMsg} aside='' name="Wev Development" />
                 <Button click={this.show} article={androidMsg} aside={androidAside} name="Android" />
                 <Button click={this.show} article={jsArticle} aside={jsAside} name="Javascript" />
                 <Button click={this.show} article={jqArticle} aside={jqAside} name="jQuery" />
