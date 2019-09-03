@@ -27,10 +27,11 @@ class Vec2d {
 }
 
 class Polygon {
-  constructor(points, origin, scale, rotSpeed) {
+  constructor(points, origin, scale, rotSpeed, vel) {
     this.points = points;
     this.origin = origin;
     this.rotSpeed = rotSpeed;
+    this.vel = vel;
     this.points.forEach((p) => p.scale(scale));
   }
 
@@ -50,6 +51,11 @@ class Polygon {
 
   update() {
     this.points.forEach((p) => p.rotate(this.rotSpeed));
+
+    // test
+    this.origin.translate(this.vel);
+    this.origin.x = this.origin.x % 700;
+    this.origin.y = this.origin.y % 700;
   }
 }
 
@@ -62,7 +68,8 @@ for(let i = 0; i < 16; i++){
     new Vec2d(0, -10),
     new Vec2d(10, 10),
     new Vec2d(-10, 10)
-  ], new Vec2d(Math.random() * 600, Math.random() * 600), Math.random() * 4, rot));
+  ], new Vec2d(Math.random() * 600, Math.random() * 600), Math.random() * 4,
+  rot, new Vec2d(Math.random(), Math.random())));
 }
 
 setInterval(tick, 33);
