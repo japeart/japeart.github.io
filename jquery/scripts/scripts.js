@@ -13,7 +13,7 @@ function getPostById() {
       $('#results').html(getResultString(result[0]));
     });
   } else {
-    alert('invalid input value');
+    alert('Enter a number 1 to 100');
   }
   document.getElementById('inputId').value = "";
 }
@@ -21,9 +21,9 @@ function getPostById() {
 function getUserById() {
   console.log('getUserById called');
   let number = document.getElementById('inputUserId').value;
-  // validate input - number between 1 and 100
+  // validate input - number between 1 and 10
   let pattern = /^[^a-z]+$/i;
-  if(pattern.test(number) && number < 101 && number > 0) {
+  if(pattern.test(number) && number < 11 && number > 0) {
     $.getJSON("https://jsonplaceholder.typicode.com/posts/", { userId : number}, function(result){
       // concatenate result string
       console.log(JSON.stringify(result[0]));
@@ -34,7 +34,7 @@ function getUserById() {
       $('#results').html(resultString);
     });
   } else {
-    alert('invalid input value');
+    alert('Enter a number 1 to 10');
   }
   document.getElementById('inputUserId').value = "";
 }
