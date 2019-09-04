@@ -65,3 +65,27 @@ function isBoxColliding(rect1, rect2) {
     return 'true';
   }
 }
+
+class Matrix3x3 {
+  constructor(xBasis, yBasis, trans) {
+    this.matrix = [
+      xBasis.x, yBasis.x, trans.x,
+      xBasis.y, yBasis.y, trans.y,
+      0, 0, 1
+    ];
+  }
+
+  rotate(angle) {
+    this.matrix[0] = Math.cos(angle);
+    this.matrix[1] = -Math.sin(angle);
+    this.matrix[3] = Math.sin(angle);
+    this.matrix[4] = Math.cos(angle);
+    // console.log(this);
+  }
+
+  transform(vector) {
+    let x = vector.x * this.matrix[0] + vector.y * this.matrix[1] + this.matrix[2];
+    let y = vector.x * this.matrix[3] + vector.y * this.matrix[4] + this.matrix[5];
+    return new Vec2d(x, y);
+  }
+}

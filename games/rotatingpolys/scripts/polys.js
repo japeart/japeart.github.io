@@ -27,10 +27,12 @@ class Vec2d {
 }
 
 class Polygon {
-  constructor(points, origin, scale, rotSpeed, vel) {
+  constructor(points, origin, scale, increment, vel) {
     this.points = points;
+    this.buffer = [];
     this.origin = origin;
-    this.rotSpeed = rotSpeed;
+    this.increment = increment;
+    this.angle = increment;
     this.vel = vel;
     this.points.forEach((p) => p.scale(scale));
   }
@@ -39,21 +41,36 @@ class Polygon {
   draw() {
     screen.context.strokeStyle = "#ffffe6";
     screen.context.beginPath();
-    screen.context.moveTo(this.points[0].x + this.origin.x, this.points[0].y + this.origin.y);
+    screen.context.moveTo(this.buffer[0].x, this.buffer[0].y);
 
-    for(let i = 1; i < this.points.length; i++) {
-      screen.context.lineTo(this.points[i].x + this.origin.x, this.points[i].y + this.origin.y);
+    for(let i = 1; i < this.buffer.length; i++) {
+      screen.context.lineTo(this.buffer[i].x, this.buffer[i].y);
     }
     // last one
-    screen.context.lineTo(this.points[0].x + this.origin.x, this.points[0].y + this.origin.y);
+    screen.context.lineTo(this.buffer[0].x, this.buffer[0].y);
     screen.context.stroke();
   }
 
   update() {
-    this.points.forEach((p) => p.rotate(this.rotSpeed));
+    // inc angle
+    this.angle += this.increment;
+    this.angle = this.angle % 360;
+    // update origin
+    this.origin.translate(this.vel);
+
+    // get a transformation matrix
+    let m = new Matrix3x3(
+      new Vec2d(1, 0),
+      new Vec2d(0, 1),
+      new Vec2d(this.origin.x, this.origin.y));
+
+    m.rotate(this.angle);
+
+    for(let i = 0; i < this.points.length; i++) {
+      this.buffer[i] = m.transform(this.points[i]);
+    }
 
     // test
-    this.origin.translate(this.vel);
     this.origin.x = this.origin.x % 700;
     this.origin.y = this.origin.y % 700;
   }
