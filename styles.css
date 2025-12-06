@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black
+}
+
+.topnav {
+    height: 40px;
+    width: 100%;
+    background-color: #355070;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /* overflow-x: hidden; Disable horizontal scroll */
+    box-sizing: border-box; /* dont include padding in calcs */
+}
+
+.topnav a {
+    color: white;
+    font-size: x-large;
+    /* display: block; enforce <p> layout */
+    transition: 0.3s;
+    text-decoration: none; /* hide link underscore */
+}
+
+.topnav a:hover {
+    color: gray;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.layout p, .layout h1, .layout h3 {
+    color: white;
+}
+
+.about {
+    width: 100%;
+    background-color: #b56576;
+    padding-top:  5%;
+    padding-bottom: 5%;
+}
+
+.about .content {
+    width: 50%;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+.about h1 {
+    text-align: center;
+}
+
+.published {
+    text-align: center;
+    width: 100%;
+    background-color: #87bba2;
+}
+
+.published .content {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.video {
+    width: 560;
+    height: 315;
+}
+
+.tagset {
+    display: flex;
+    flex-direction: row;
+    gap: 5px; /* Optional: adds space between tags */
+    flex-wrap: wrap; /* Allows wrapping if needed */
+}
+
+.tag {
+    width: fit-content;
+}
+
+.tag p {
+    padding: 5px;
+}

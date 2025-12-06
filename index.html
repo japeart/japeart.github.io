@@ -2,21 +2,114 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
     </head>
     <body>
-        <h1>japeart.github.io</h1>
-
-        <div class="container">
-            <div>
-                <iframe width="560" height="315" 
-                src="https://www.youtube-nocookie.com/embed/c2ovlUHRnKw?si=Q5jsNYKPfGSkXTDY" title="YouTube video player">
-                </iframe>
+        <!-- Initially, show the main bit of content, but have all the others
+        hidden. Then use java script to toggle which containers are visible -->
+        <div class="topnav">
+            <!-- <h1 style="color: white;">japeart.github.io</h1> -->
+            <a href="#">About</a>
+            <a href="#">Published Games</a>
+            <a href="#">Personal Projects</a>
+            <a href="#">Links</a>
+        </div>
+        
+        <div class="layout">
+            <div class="about">
+                <div class="content">
+                    <h1>ABOUT ME</h1>
+                    <p>Hi, I'm John, and I am a programmer from the North East of 
+                        England. I've been tinkering with game programming since I was 8, and I've 
+                        just wrapped up development on MiB: Most Wanted as a Gameplay
+                        Programmer for Coatsink Software. I hold a Master's in Computer 
+                        Science and I graduated from Newcastle University.</p>
+                    <!-- <p>C#</p>
+                    <p>C/C++</p>
+                    <p>Java</p>
+                    <p>Python</p> -->
+                </div>
             </div>
-            <div>Nov 2019 to Aug 2021</div>
+            
+            <div class="published">
+                <h1>PUBLISHED GAMES</h1>
+                <div class="content">
+                    <div class="video">
+                        <iframe
+                        src="https://www.youtube-nocookie.com/embed/C1Lv-jgS1ec?si=46Ct4zeWqLj5Xv7f">
+                        </iframe>
+                        <h3>MiB Most Wanted</h3>
+                        <div class="tagset">
+                            <tag-csharp></tag-csharp>
+                            <tag-vr></tag-vr>
+                            <tag-gameplay></tag-gameplay>
+                            <tag-ui></tag-ui>
+                            <tag-rendering></tag-rendering>
+                            <tag-optimisation></tag-optimisation>
+                        </div>
+                    </div>
 
-            <div>Skytail</div><div>Sept 2021 to Aug 2023</div>
-            <div>Islanders VR</div><div>Sept 2023 to Nov 2023</div>
-            <div>MIB Most Wanted</div><div>Dec 2023 to Dec 2025</div>
+                    <div class="video">
+                        <iframe
+                        src="https://www.youtube-nocookie.com/embed/n7mYz3EmCt8?si=2q0f2rJcuquIIvgy">
+                        </iframe>
+                        <h3>Islanders VR</h3>
+                        <div class="tagset">
+                            <tag-csharp></tag-csharp>
+                            <tag-vr></tag-vr>
+                            <tag-gameplay></tag-gameplay>
+                            <tag-ui></tag-ui>
+                        </div>
+                    </div>
+                    
+                    <div class="video">
+                        <iframe
+                        src="https://www.youtube-nocookie.com/embed/lt5BIjGdBZw?si=fAwpXlGkB8s9V49o">
+                        </iframe>
+                        <h3>Jurassic World Aftermath Part 2</h3>
+                        <div class="tagset">
+                            <tag-csharp></tag-csharp>
+                            <tag-vr></tag-vr>
+                            <tag-gameplay></tag-gameplay>
+                        </div>
+                    </div>
+
+                    <div class="video">
+                        <iframe
+                        src="https://www.youtube-nocookie.com/embed/c2ovlUHRnKw?si=Q5jsNYKPfGSkXTDY">
+                        </iframe>
+                        <h3>Jurassic World Aftermath Part 1</h3>
+                        <div class="tagset">
+                            <tag-csharp></tag-csharp>
+                            <tag-vr></tag-vr>
+                            <tag-gameplay></tag-gameplay>
+                        </div>
+                    </div>
+
+                </div>
+                    
+                    <!-- <div>
+                        <iframe width="560" height="315" 
+                        src="https://www.youtube-nocookie.com/embed/lt5BIjGdBZw?si=fAwpXlGkB8s9V49o">
+                        </iframe>
+                    </div>
+                    <div>JW part 2 Nov 2019 to Aug 2021</div>
+        
+                    <div>Skytail</div><div>Sept 2021 to Aug 2023</div>
+        
+                    <div>
+                        <iframe width="560" height="315" 
+                        src="https://www.youtube-nocookie.com/embed/n7mYz3EmCt8?si=2q0f2rJcuquIIvgy">
+                        </iframe>
+                    </div>
+                    <div>Islanders VR Sept 2023 to Nov 2023</div>
+        
+                    <div>
+                        <iframe width="560" height="315" 
+                        src="https://www.youtube-nocookie.com/embed/C1Lv-jgS1ec?si=46Ct4zeWqLj5Xv7f">
+                        </iframe>
+                    </div><div>MIB Most Wanted Dec 2023 to Dec 2025</div> -->
+            </div>
         </div>
     </body>
 </html>
