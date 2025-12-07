@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: black
 }
 
@@ -12,7 +12,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    /* overflow-x: hidden; Disable horizontal scroll */
+    overflow-x: hidden; /* Disable horizontal scroll
     box-sizing: border-box; /* dont include padding in calcs */
 }
 
@@ -22,6 +22,7 @@ body {
     /* display: block; enforce <p> layout */
     transition: 0.3s;
     text-decoration: none; /* hide link underscore */
+    gap: 50px;
 }
 
 .topnav a:hover {
@@ -39,9 +40,16 @@ body {
     color: white;
 }
 
+.header {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #1d1d1d;
+    text-align: center;
+}
+
 .about {
     width: 100%;
-    background-color: #b56576;
+    background-color: #2e2e2e;
     padding-top:  5%;
     padding-bottom: 5%;
 }
@@ -56,10 +64,15 @@ body {
     text-align: center;
 }
 
+.about .content .list {
+    padding-top: 10px;
+    padding-left: 10%;
+}
+
 .published {
     text-align: center;
     width: 100%;
-    background-color: #87bba2;
+    background-color: #2e2e2e;
 }
 
 .published .content {
@@ -67,23 +80,29 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .video {
-    width: 560;
-    height: 315;
+    padding-top: 40px;
+}
+
+.video iframe {
+    width: 560px;
+    height: 315px;
 }
 
 .tagset {
+    width: fit-content;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 5px; /* Optional: adds space between tags */
-    flex-wrap: wrap; /* Allows wrapping if needed */
 }
 
 .tag {
-    width: fit-content;
+    
 }
 
 .tag p {

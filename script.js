@@ -3,7 +3,7 @@ class Tag extends HTMLElement {
         this.innerHTML = `
         <div class="tag">
             <div class="gameplay">
-                <p style="border-radius: 10px; background-color: ${this.colour}">${this.text}</p>
+                <p style="border-radius: 10px; background-color: ${this.colour}; display: block;">${this.text}</p>
             </div>
         </div>
         `;
@@ -42,6 +42,14 @@ class TagUI extends Tag {
     }
 }
 
+class TagUX extends Tag {
+    constructor() {
+        super();
+        this.text = "UX";
+        this.colour = "LightSeaGreen";
+    }
+}
+
 class TagRendering extends Tag {
     constructor() {
         super();
@@ -54,13 +62,23 @@ class TagOptimisation extends Tag {
     constructor() {
         super();
         this.text = "Optimisation";
-        this.colour = "gold";
+        this.colour = "tan";
+    }
+}
+
+class TagSVN extends Tag {
+    constructor() {
+        super();
+        this.text = "SVN";
+        this.colour = "Teal";
     }
 }
 
 customElements.define("tag-gameplay", TagGameplay);
 customElements.define("tag-vr", TagVR);
+customElements.define("tag-svn", TagSVN);
 customElements.define("tag-csharp", TagCSharp);
 customElements.define("tag-ui", TagUI);
+customElements.define("tag-ux", TagUX);
 customElements.define("tag-rendering", TagRendering);
 customElements.define("tag-optimisation", TagOptimisation);
