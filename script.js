@@ -1,84 +1,16 @@
 class Tag extends HTMLElement {
     connectedCallback() {
+        const colour = this.getAttribute('colour');
+        const text = this.getAttribute('text');
+
         this.innerHTML = `
         <div class="tag">
             <div class="gameplay">
-                <p style="border-radius: 10px; background-color: ${this.colour}; display: block;">${this.text}</p>
+                <p style="border-radius: 10px; background-color: ${colour}; display: block;">${text}</p>
             </div>
         </div>
         `;
     }
 }
 
-class TagGameplay extends Tag {
-    constructor() {
-        super();
-        this.text = "Gameplay Programmer";
-        this.colour = "salmon";
-    }
-}
-
-class TagVR extends Tag {
-    constructor() {
-        super();
-        this.text = "VR";
-        this.colour = "blue";
-    }   
-}
-
-class TagCSharp extends Tag {
-    constructor() {
-        super();
-        this.text = "C#";
-        this.colour = "orange";
-    }
-}
-
-class TagUI extends Tag {
-    constructor() {
-        super();
-        this.text = "UI";
-        this.colour = "purple";
-    }
-}
-
-class TagUX extends Tag {
-    constructor() {
-        super();
-        this.text = "UX";
-        this.colour = "LightSeaGreen";
-    }
-}
-
-class TagRendering extends Tag {
-    constructor() {
-        super();
-        this.text = "Rendering";
-        this.colour = "red";
-    }
-}
-
-class TagOptimisation extends Tag {
-    constructor() {
-        super();
-        this.text = "Optimisation";
-        this.colour = "tan";
-    }
-}
-
-class TagSVN extends Tag {
-    constructor() {
-        super();
-        this.text = "SVN";
-        this.colour = "Teal";
-    }
-}
-
-customElements.define("tag-gameplay", TagGameplay);
-customElements.define("tag-vr", TagVR);
-customElements.define("tag-svn", TagSVN);
-customElements.define("tag-csharp", TagCSharp);
-customElements.define("tag-ui", TagUI);
-customElements.define("tag-ux", TagUX);
-customElements.define("tag-rendering", TagRendering);
-customElements.define("tag-optimisation", TagOptimisation);
+customElements.define("tag-element", Tag);
