@@ -1,28 +1,38 @@
 body {
     margin: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #2e2e2e;
+    font-family: "Share Tech", sans-serif;
+    background-color: #292a2b;
+    color: rgb(255, 255, 255);
 }
 
 .topnav {
-    height: 40px;
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
     width: 100%;
-    background-color: #355070;
+    height: 10%;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    overflow-x: hidden; /* Disable horizontal scroll
-    box-sizing: border-box; /* dont include padding in calcs */
+    overflow-x: hidden;
+    background-color: #1d1d1d;
+
+    border-bottom: 0.125pc solid rgb(0, 161, 35)
 }
 
 .topnav a {
     color: white;
-    font-size: x-large;
+    font-size: xx-large;
     /* display: block; enforce <p> layout */
     transition: 0.3s;
     text-decoration: none; /* hide link underscore */
-    margin-right: 40px;
+    justify-self: center;
+    padding-left: 2.5pc;
+    padding-right: 2.5pc;
+    padding-bottom: 2.5px;
 }
 
 .topnav a:hover {
@@ -36,10 +46,6 @@ body {
     justify-content: center;
 }
 
-.layout p, .layout h1, .layout h3 {
-    color: white;
-}
-
 .header {
     width: 100%;
     background-color: #1d1d1d;
@@ -49,13 +55,14 @@ body {
 
 .about {
     width: 100%;
-    padding-top:  40px;
 }
 
 .about .content {
     width: 50%;
+    margin: 5% auto 0;
     text-align: justify;
-    margin: 0 auto;
+    margin-top: 5%;
+    font-size: x-large;
 }
 
 .about h1 {
@@ -121,8 +128,18 @@ body {
 .projects .project h3{
     height: 40px;
     text-align: center;
+    font-size: larger;
 }
+
+p {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}   
 
 .tag p {
     padding: 5px;
+    color: white;
+    font-weight: 500;
 }

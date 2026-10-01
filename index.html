@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="styles.css">
         <script src="script.js"></script>
     </head>
@@ -8,37 +12,39 @@
         <!-- Initially, show the main bit of content, but have all the others
         hidden. Then use java script to toggle which containers are visible -->
         <div class="topnav">
-            <a href="#about">About Me</a>
-            <a href="#published">Published Titles</a>
-            <a href="#projects">Personal Projects</a>
+            <a href="#about">ABOUT ME</a>
+            <a href="#published">PUBLISHED TITLES</a>
+            <a href="#indie">INDIE TITLES</a>
+            <a href="#projects">PERSONAL PROJECTS</a>
         </div>
         
         <div class="layout">
 
             <div class="header">
-                <h1>ABOUT ME</h1>
+                <!-- <h1>ABOUT ME</h1> -->
             </div>
 
             <div class="about" id="about">
                 <div class="content">
-                    <p>Hi, I'm John, and I am a game programmer from the North East of 
-                        England. I've been tinkering with computers since childhood, 
-                        and I've just wrapped up development on MiB: Most Wanted as a Gameplay
-                        Programmer for Coatsink Software. I hold a Master's in Computer 
-                        Science and I graduated from Newcastle University.</p>
-                    <p>As mentioned, I've been a professional games programmer at 
-                        Coatsink for around 6 years, primarily working in the Unity 
-                        engine with C#. However, in my personal projects I like to use a range 
-                        of other languages with some notable highlights below:</p>
+                    <p>Hi, I'm John, and I am programmer from the North East of England. Lately, I've been working on a proprietary C++ game engine and developing indie games. Before that, I spent six years at Coatsink Software shipping major VR titles for clients such as Sony Pictures and Meta. I hold an MSc in Computer Science and I graduated from Newcastle University. My first computer was the ZX Spectrum.</p>
+                    <p>My main professional experience has primarily been as a C#/.Net developer, working in the Unity game engine. However, I have experience of a range of technologies and languages, which I will list below:</p>
 
                     <div class="list">
-                        <p>&#9679; C++ Custom lightweight 3D game framework</p>
-                        <p>&#9679; GLSL/HLSL shaders</p>
-                        <p>&#9679; C 2D game development for porting accross retro systems</p>
-                        <p>&#9679; Java desktop applications for tooling and editors</p>
-                        <p>&#9679; Python 2D prototyping using the PyGame framework</p>
-                        <p>&#9679; Z80 assembly for the ZX Spectrum</p>
-                        <p>&#9679; 6502 assembly for the Atari 2600</p>
+                        <h3>LANGUAGES</h3>
+                        <p>&#9679; C/C++, C#, GLSL/HLSL, Python, Java, HTML/CSS/JS/PHP, Z80/6502 assembly</p>
+                        <h3>TECHNOLOGIES</h3>
+                        <p>&#9679; Unity</p>
+                        <p>&#9679; XR, Virtual Reality, Oculus</p>
+                        <p>&#9679; OpenGL</p>
+                        <p>&#9679; SVN/Git</p>
+                        <p>&#9679; JIRA</p>
+                        <p>&#9679; Android</p>
+                        <p>&#9679; SDL</p>
+                        <p>&#9679; Renderdoc</p>
+                        <p>&#9679; Linux Shell</p>
+                        <p>&#9679; Fusion</p>
+                        <p>&#9679; Jenkins</p>
+                        <p>&#9679; Make</p>
                     </div>
                 </div>
             </div>
@@ -62,7 +68,7 @@
                             <tag-element text="Gameplay" colour="Salmon"></tag-element>
                             <tag-element text="UI" colour="Purple"></tag-element>
                             <tag-element text="VR" colour="Blue"></tag-element>
-                            <tag-element text="Rendering" colour="Red"></tag-element>
+                            <tag-element text="HLSL" colour="Red"></tag-element>
                             <tag-element text="Optimisation" colour="Tan"></tag-element>
                             <tag-element text="SVN" colour="Teal"></tag-element>
                         </div>
@@ -115,6 +121,28 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+
+            <div class="header">
+                <h1>INDIE TITLES</h1>
+            </div>
+            <div class="indie" id="indie">
+                <div class="video">
+                    <h3>Becoming Alan Smedwick</h3>
+                    <iframe
+                    src="https://www.youtube-nocookie.com/embed/_IyAmsWTSc8?si=qs4MGciQnoLenJDJ">
+                    </iframe>
+                    <div class="tagset">
+                        <tag-element text="C++" colour="Green"></tag-element>
+                        <tag-element text="Engine" colour="FireBrick"></tag-element>
+                        <tag-element text="GLSL" colour="Red"></tag-element>
+                        <tag-element text="GIT" colour="Indigo"></tag-element>
+                        <tag-element text="Python" colour="Orange"></tag-element>
+                    </div>
+                    <p>&#9679; Traditional Parser Text Adventure in the style of a 16-bit game</p>
+                    <p>&#9679; C++ engine for frontend, parser written as a C plugin for quick porting across other systems (Android, Spectrum Next, etc.)</p>
+                    <p>&#9679; Extensive use of Python to convert natural language room and object definitions into gameplay data</p>
                 </div>
             </div>
 
