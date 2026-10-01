@@ -61,7 +61,7 @@ body {
     width: 50%;
     margin: 5% auto 0;
     text-align: justify;
-    margin-top: 5%;
+    margin-top: 10%;
     font-size: x-large;
 }
 
@@ -91,6 +91,11 @@ body {
 .video {
     padding-top: 40px;
     width: 448px;
+}
+
+.video h3 {
+    text-align: center;
+    font-size: x-large;
 }
 
 .video iframe {
@@ -124,10 +129,10 @@ body {
     width: 300px;
 }
 
-.projects .project h3{
-    height: 40px;
+.projects h3 {
     text-align: center;
-    font-size: larger;
+    font-size: x-large;
+    height: 7%;
 }
 
 p {
