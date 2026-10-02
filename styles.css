@@ -143,7 +143,8 @@ p {
 }   
 
 .tag p {
-    padding: 5px;
+    margin: 0;                  /* kills the default paragraph spacing */
+    padding: 3px 8px;           /* tighten vertical padding too */
     color: white;
     font-weight: 500;
 }
