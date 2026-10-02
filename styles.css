@@ -58,7 +58,7 @@ body {
 }
 
 .about .content {
-    width: 50%;
+    width: 60%;
     margin: 5% auto 0;
     text-align: justify;
     margin-top: 10%;
@@ -146,4 +146,27 @@ p {
     padding: 5px;
     color: white;
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .about .content {
+    width: 95%;
+    margin-top: 15%;
+    font-size: medium;
+  }
+}
+
+@media (max-width: 768px) {
+  .video,
+  .video iframe {
+    width: 100%;
+    max-width: 448px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .projects .project {
+    width: 90%;
+    max-width: 300px;
+  }
 }
