@@ -78,7 +78,7 @@ body {
     width: 100%;
 }
 
-.published .content {
+.content {
     width: 70%;
     margin: 0 auto;
     display: flex;
@@ -148,25 +148,44 @@ p {
     font-weight: 500;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+
+  /* --- NAV: make it wrap instead of overflowing --- */
+  .topnav {
+    height: auto;              /* was 10% — fixed % height clips wrapped rows */
+    flex-wrap: wrap;           /* was nowrap — this is what hid the links */
+    justify-content: center;
+  }
+  .topnav a {
+    font-size: large;
+    padding: 8px 12px;         /* was 2.5pc per side = far too wide */
+  }
+
+  /* --- Push content below the now-taller nav --- */
+  .layout {
+    padding-top: 110px;        /* adjust after checking how tall the wrapped nav renders */
+  }
+
+  /* --- ABOUT text: the original goal --- */
   .about .content {
-    width: 95%;
-    margin-top: 15%;
-    font-size: medium;
+    width: 92%;
+    margin-top: 20px;          /* was 10% of viewport width — huge on mobile */
+    font-size: large;          /* keep it readable, don't shrink to 'medium' */
   }
-}
 
-@media (max-width: 768px) {
-  .video,
+  /* --- VIDEOS: scale down WITHOUT breaking layout --- */
+  .video {
+    width: min(448px, 92%);    /* never wider than screen, never wider than before */
+    padding-top: 20px;
+  }
   .video iframe {
-    width: 100%;
-    max-width: 448px;
+    width: 100%;               /* fills parent (.video), which is capped at 448px */
     height: auto;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9;      /* keeps 448x252 proportions automatically */
   }
 
-  .projects .project {
-    width: 90%;
-    max-width: 300px;
-  }
+  /* --- PROJECTS: stop 300px cards + 50px gaps from overflowing --- */
+  .projects { gap: 30px; }
+  .projects .project { width: min(300px, 92%); }
+  .projects .project img { max-width: 100%; height: auto; }
 }
